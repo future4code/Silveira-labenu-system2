@@ -12,12 +12,14 @@ export class TurmaController{
                 throw new Error ("O nome e o modulo precisam ser passados")
                 
             }
-    
+            if(modulo < 0 || modulo > 6){
+                throw new Error ("Módulo invalido")
+            }
             const turma = new TurmaModel(id, nome, modulo)
             const turmaDB = new TurmaDataBase()
     
             await turmaDB.insert(turma)
-            res.status(201).send("Turma adicionada com sucesso")
+            res.status(201).send(`Turma ${nome} adicionada com sucesso`)
     
         } catch (error:any) {
             res.status(500).send(error.message || error.sqlMessage)

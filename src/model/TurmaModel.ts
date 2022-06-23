@@ -1,12 +1,21 @@
 export class TurmaModel{
       constructor(
-      public id: string,
-      public nome: string,
-      public modulo: string 
+      private id: string,
+      private nome: string,
+      private modulo: number
     ){
        this.id = id,
        this.nome = nome,
        this.modulo = modulo
     }
+   public getId():string{
+      return this.id
+    }
+   public getNome():string{
+      return this.nome
+   }
+   public getModulo():number{
+      return this.modulo
+   } 
  }
-//  "1"|"2"|"3"|"4"|"5"|"6"? "ativo":"inativo" 
+
