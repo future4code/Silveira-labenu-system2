@@ -6,7 +6,7 @@ export class DocenteModel {
       private data_nasc: Date,
       private turma_id: string
    ) {
-      this.id = id,
+         this.id = id,
          this.nome = nome,
          this.email = email,
          this.data_nasc = data_nasc,
