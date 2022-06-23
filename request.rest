@@ -2,11 +2,22 @@ POST http://localhost:3003/turma
 Content-Type: application/json
 
 {
-    "nome":"teste",
-    "modulo":"1"
+    "nome":"",
+    "modulo":""
 }
 
 ###
 
 GET http://localhost:3003/turma
+
+###
+
+POST http://localhost:3003/docente
 Content-Type: application/json
+
+{
+    "nome": "Flávio Motta",
+    "email": "flaviomotta@email.com", 
+    "data_nasc": "1990/03/31",
+    "turma_id": "1655927633690"
+}
