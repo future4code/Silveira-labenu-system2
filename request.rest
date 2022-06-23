@@ -2,8 +2,8 @@ POST http://localhost:3003/turma
 Content-Type: application/json
 
 {
-    "nome":"",
-    "modulo":""
+    "nome":"Davi",
+    "modulo": 2
 }
 
 ###
@@ -45,3 +45,12 @@ Content-Type: application/json
 
 GET http://localhost:3003/docente
 Content-Type: application/json
+
+###
+
+POST http://localhost:3003/especialidade
+Content-Type: application/json
+
+{
+    "nome":"POO(Programação Orientada a Objetos)"
+}
