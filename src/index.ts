@@ -1,6 +1,11 @@
 import {app} from "./app"
-import getTurma from "./endpoints/getTurma";
-import postTurma from './endpoints/postTurma';
+import { TurmaController } from "./endpoints/TurmaController";
 
-app.post("/turma", postTurma)
-app.get("/turma", getTurma)
+
+
+
+const turmaController = new TurmaController()
+
+app.post("/turma", turmaController.postTurma)
+app.get("/turma", turmaController.getTurma)
+
