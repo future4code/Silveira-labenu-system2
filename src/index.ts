@@ -13,6 +13,7 @@ const docenteController = new DocenteController();
 
 app.post("/docente", docenteController.postDocente);
 app.get("/docente", docenteController.getDocente);
+app.put("/docente/:id", docenteController.putDocente);
 
 const studentController = new StudentController()
 

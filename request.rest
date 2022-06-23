@@ -2,8 +2,8 @@ POST http://localhost:3003/turma
 Content-Type: application/json
 
 {
-    "nome":"Davi",
-    "modulo": 2
+    "nome":"",
+    "modulo": 
 }
 
 ###
@@ -11,16 +11,15 @@ Content-Type: application/json
 GET http://localhost:3003/turma
 Content-Type: application/json
 
-
 ###
 
 POST http://localhost:3003/estudante
 Content-Type: application/json
 
 {
-    "nome": "Mariana",
-    "email": "mariana@dev.com",
-    "data_nasc": "1997-02-24",
+    "nome": "Eric Felipe",
+    "email": "eric@email.com",
+    "data_nasc": "2002/07/31",
     "turma_id": "1655927633690"
 }
 
@@ -29,16 +28,15 @@ Content-Type: application/json
 GET http://localhost:3003/estudante
 Content-Type: application/json
 
-
 ###
 POST http://localhost:3003/docente
 Content-Type: application/json
 
 {
-    "nome": "Flávio Motta",
-    "email": "flaviomotta@email.com", 
-    "data_nasc": "1990/03/31",
-    "turma_id": "1655927633690"
+    "nome": "",
+    "email": "", 
+    "data_nasc": "",
+    "turma_id": ""
 }
 
 ###
@@ -48,9 +46,17 @@ Content-Type: application/json
 
 ###
 
+PUT http://localhost:3003/docente/1655994199165
+Content-Type: application/json
+
+{
+    "turma_id": "1655927710515"
+}
+
 POST http://localhost:3003/especialidade
 Content-Type: application/json
 
 {
-    "nome":"POO(Programação Orientada a Objetos)"
+    "nome":""
 }
+
