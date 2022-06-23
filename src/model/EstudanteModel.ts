@@ -1,13 +1,13 @@
 export class EstudanteModel{
       constructor(
       public id: string,
-      public name: string,
+      public nome: string,
       public email: string,
       public data_nasc: Date,
       public turma_id: string
     ){
        this.id = id,
-       this.name = name,
+       this.nome = nome,
        this.email = email,
        this.data_nasc = data_nasc,
        this.turma_id = turma_id

@@ -9,9 +9,28 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3003/turma
+Content-Type: application/json
+
 
 ###
 
+POST http://localhost:3003/estudante
+Content-Type: application/json
+
+{
+    "nome": "Mariana",
+    "email": "mariana@dev.com",
+    "data_nasc": "1997-02-24",
+    "turma_id": "1655927633690"
+}
+
+###
+
+GET http://localhost:3003/estudante
+Content-Type: application/json
+
+
+###
 POST http://localhost:3003/docente
 Content-Type: application/json
 
@@ -21,3 +40,8 @@ Content-Type: application/json
     "data_nasc": "1990/03/31",
     "turma_id": "1655927633690"
 }
+
+###
+
+GET http://localhost:3003/docente
+Content-Type: application/json
