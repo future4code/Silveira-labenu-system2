@@ -1,29 +1,19 @@
 import {app} from "./app"
-import getTurma from "./endpoints/getTurma";
-import postTurma from './endpoints/postTurma';
+import { TurmaController } from "./endpoints/TurmaController";
+import { DocenteController } from './endpoints/docenteController';
 import { StudentController } from "./endpoints/StudentController";
 
-app.post("/turma", postTurma)
-app.get("/turma", getTurma)
+const turmaController = new TurmaController()
 
+app.post("/turma", turmaController.postTurma);
+app.get("/turma", turmaController.getTurma);
 
+const docenteController = new DocenteController();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.post("/docente", docenteController.postDocente);
+app.get("/docente", docenteController.getDocente);
 
 const studentController = new StudentController()
 
-
-app.post("/estudante", studentController.postStudent)
-app.get("/estudante", studentController.getStudent)
+app.post("/estudante", studentController.postStudent);
+app.get("/estudante", studentController.getStudent);
