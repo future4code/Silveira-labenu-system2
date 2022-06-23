@@ -2,6 +2,11 @@ POST http://localhost:3003/turma
 Content-Type: application/json
 
 {
-    "nome":"Shaw",
-    "modulo":"5"
+    "nome":"Romeu",
+    "modulo":"3"
 }
+
+###
+
+GET http://localhost:3003/turma
+Content-Type: application/json
