@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
     "nome":"",
-    "modulo":""
+    "modulo": 
 }
 
 ###
@@ -11,17 +11,16 @@ Content-Type: application/json
 GET http://localhost:3003/turma
 Content-Type: application/json
 
-
 ###
 
 POST http://localhost:3003/estudante
 Content-Type: application/json
 
 {
-    "nome": "Ariane01",
-    "email": "Ari@dev.com",
-    "data_nasc": "2002-07-30",
-    "turma_id": "1655927633690"
+    "nome": "",
+    "email": "",
+    "data_nasc": "",
+    "turma_id": ""
 }
 
 ###
@@ -35,7 +34,7 @@ PUT http://localhost:3003/estudante/1655994505513
 Content-Type: application/json
 
 {
-    "turma_id": "1655927710515"
+    "turma_id": ""
 }
 
 ###
@@ -43,13 +42,30 @@ POST http://localhost:3003/docente
 Content-Type: application/json
 
 {
-    "nome": "Flávio Motta",
-    "email": "flaviomotta@email.com", 
-    "data_nasc": "1990/03/31",
-    "turma_id": "1655927633690"
+    "nome": "",
+    "email": "", 
+    "data_nasc": "",
+    "turma_id": ""
 }
 
 ###
 
 GET http://localhost:3003/docente
 Content-Type: application/json
+
+###
+
+PUT http://localhost:3003/docente/1655994199165
+Content-Type: application/json
+
+{
+    "turma_id": ""
+}
+
+POST http://localhost:3003/especialidade
+Content-Type: application/json
+
+{
+    "nome":""
+}
+

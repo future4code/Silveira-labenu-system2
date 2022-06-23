@@ -6,9 +6,9 @@ export class TurmaDataBase extends BaseDatabase{
         try{
         await BaseDatabase.connection("turma")
         .insert({
-            id: turma.id,
-            nome: turma.nome,
-            modulo: turma.modulo
+            id: turma.getId(),
+            nome: turma.getNome(),
+            modulo: turma.getModulo()
         })
        } catch(error){
             throw new Error("Erro inesperado, tente novamente")

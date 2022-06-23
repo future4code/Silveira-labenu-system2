@@ -32,4 +32,17 @@ export class DocenteController {
             res.status(400).send(error.message || error.sqlMessage)
         }
     }
+        async putDocente(req: Request, res: Response): Promise<void> {
+        try {
+            const id = req.params.id
+            const turma_id = req.body.turma_id
+            const docenteDB = new DocenteDataBase()
+
+            await docenteDB.updateDocente(id, turma_id)
+            res.status(200).send('Class updated successfully')
+
+        } catch (error: any) {
+            res.status(400).send(error.message || error.sqlMessage)
+        }
+    }
 };

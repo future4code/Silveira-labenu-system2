@@ -3,6 +3,7 @@ import {app} from "./app"
 import { TurmaController } from "./endpoints/TurmaController";
 import { DocenteController } from './endpoints/DocenteController';
 import { StudentController } from "./endpoints/StudentController";
+import { EspecialidadeController } from "./endpoints/EspecialidadeController";
 
 const turmaController = new TurmaController()
 
@@ -13,9 +14,14 @@ const docenteController = new DocenteController();
 
 app.post("/docente", docenteController.postDocente);
 app.get("/docente", docenteController.getDocente);
+app.put("/docente/:id", docenteController.putDocente);
 
 const studentController = new StudentController()
 
 app.post("/estudante", studentController.postStudent);
 app.get("/estudante", studentController.getStudent);
 app.put("/estudante/:id", studentController.putStudent)
+
+const especialidadeController = new EspecialidadeController()
+
+app.post("/especialidade", especialidadeController.postEspecialidade)
