@@ -18,9 +18,9 @@ POST http://localhost:3003/estudante
 Content-Type: application/json
 
 {
-    "nome": "Mariana",
-    "email": "mariana@dev.com",
-    "data_nasc": "1997-02-24",
+    "nome": "Ariane01",
+    "email": "Ari@dev.com",
+    "data_nasc": "2002-07-30",
     "turma_id": "1655927633690"
 }
 
@@ -29,6 +29,14 @@ Content-Type: application/json
 GET http://localhost:3003/estudante
 Content-Type: application/json
 
+###
+
+PUT http://localhost:3003/estudante/1655994505513
+Content-Type: application/json
+
+{
+    "turma_id": "1655927710515"
+}
 
 ###
 POST http://localhost:3003/docente
