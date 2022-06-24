@@ -17,16 +17,25 @@ POST http://localhost:3003/estudante
 Content-Type: application/json
 
 {
-    "nome": "Eric Felipe",
-    "email": "eric@email.com",
-    "data_nasc": "2002/07/31",
-    "turma_id": "1655927633690"
+    "nome": "",
+    "email": "",
+    "data_nasc": "",
+    "turma_id": ""
 }
 
 ###
 
 GET http://localhost:3003/estudante
 Content-Type: application/json
+
+###
+
+PUT http://localhost:3003/estudante/1655994505513
+Content-Type: application/json
+
+{
+    "turma_id": ""
+}
 
 ###
 POST http://localhost:3003/docente
@@ -50,7 +59,7 @@ PUT http://localhost:3003/docente/1655994199165
 Content-Type: application/json
 
 {
-    "turma_id": "1655927710515"
+    "turma_id": ""
 }
 ###
 
