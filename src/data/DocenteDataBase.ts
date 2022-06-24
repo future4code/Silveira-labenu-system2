@@ -20,7 +20,11 @@ export class DocenteDataBase extends BaseDatabase {
         try {
             const result = await BaseDatabase.connection('docente')
                 .select('*')
-            return result
+                console.log(result)
+            return result.map((docente) => {
+                const reverterData = docente.data_nasc.toISOString().slice(0, 10).split("-").reverse().join("/")
+                return { ...docente, data_nasc: reverterData }
+            })
         } catch (error: any) {
             throw new Error('Unexpected error, try again')
         }
@@ -28,7 +32,7 @@ export class DocenteDataBase extends BaseDatabase {
     async updateDocente(id: string, turma_id: string) {
         try {
             await BaseDatabase.connection('docente')
-                .update({turma_id: turma_id})
+                .update({ turma_id: turma_id })
                 .where('id', '=', id)
         } catch (error: any) {
             throw new Error('Unexpected error, try again')

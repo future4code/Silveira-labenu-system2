@@ -6,13 +6,12 @@ export class DocenteController {
     async postDocente(req: Request, res: Response): Promise<void> {
         try {
             const { nome, email, data_nasc, turma_id } = req.body
-            const id = Date.now().toString()
-
             if (!nome || !email || !data_nasc || !turma_id) {
                 throw new Error('Parameters invalid')
             }
-
-            const docente = new DocenteModel(id, nome, email, data_nasc, turma_id)
+            const id = Date.now().toString()
+            const reverterData_Nasc = data_nasc.split('/').reverse().join('-')
+            const docente = new DocenteModel(id, nome, email, reverterData_Nasc, turma_id)
             const docenteDB = new DocenteDataBase()
 
             await docenteDB.insert(docente)
@@ -32,7 +31,7 @@ export class DocenteController {
             res.status(400).send(error.message || error.sqlMessage)
         }
     }
-        async putDocente(req: Request, res: Response): Promise<void> {
+    async putDocente(req: Request, res: Response): Promise<void> {
         try {
             const id = req.params.id
             const turma_id = req.body.turma_id
