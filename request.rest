@@ -2,8 +2,8 @@ POST http://localhost:3003/turma
 Content-Type: application/json
 
 {
-    "nome":"",
-    "modulo": 
+    "nome":"Newton",
+    "modulo": 2 
 }
 
 ###
@@ -52,6 +52,7 @@ Content-Type: application/json
 {
     "turma_id": "1655927710515"
 }
+###
 
 POST http://localhost:3003/especialidade
 Content-Type: application/json
@@ -59,4 +60,33 @@ Content-Type: application/json
 {
     "nome":""
 }
+
+###
+
+POST http://localhost:3003/hobby
+Content-Type: application/json
+
+{
+    "nome":"Ler"
+}
+
+###
+POST http://localhost:3003/especialidade-docente
+Content-Type: application/json
+
+{
+    "docente_id":"1656011767851",
+    "especialidade_id":"1656017815996"
+}
+
+###
+POST http://localhost:3003/hobby-estudante
+Content-Type: application/json
+
+{
+    "estudante_id":"1655994505513",
+    "hobby_id":"1656036926393"
+}
+
+
 
