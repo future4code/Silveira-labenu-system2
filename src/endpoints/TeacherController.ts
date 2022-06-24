@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
-import { DocenteDataBase } from '../data/DocenteDataBase';
-import { DocenteModel } from '../model/DocenteModel';
+import { TeacherDataBase } from '../data/TeacherDataBase';
+import { TeacherModel } from '../model/TeacherModel';
 
-export class DocenteController {
-    async postDocente(req: Request, res: Response): Promise<void> {
+export class TeacherController {
+    async postTeacher(req: Request, res: Response): Promise<void> {
         try {
             const { nome, email, data_nasc, turma_id } = req.body
             if (!nome || !email || !data_nasc || !turma_id) {
@@ -11,33 +11,32 @@ export class DocenteController {
             }
             const id = Date.now().toString()
             const reverterData_Nasc = data_nasc.split('/').reverse().join('-')
-            const docente = new DocenteModel(id, nome, email, reverterData_Nasc, turma_id)
-            const docenteDB = new DocenteDataBase()
+            const teacher = new TeacherModel(id, nome, email, reverterData_Nasc, turma_id)
+            const teacherDB = new TeacherDataBase()
 
-            await docenteDB.insert(docente)
+            await teacherDB.insert(teacher)
             res.status(200).send('Teacher added successfully')
         } catch (error: any) {
             res.status(400).send(error.message || error.sqlMessage)
         }
     }
-
-    async getDocente(req: Request, res: Response): Promise<void> {
+    async getTeacher(req: Request, res: Response): Promise<void> {
         try {
-            const docenteDB = new DocenteDataBase()
-            const docente = await docenteDB.select()
+            const teacherDB = new TeacherDataBase()
+            const teacher = await teacherDB.select()
 
-            res.status(200).send(docente)
+            res.status(200).send(teacher)
         } catch (error: any) {
             res.status(400).send(error.message || error.sqlMessage)
         }
     }
-    async putDocente(req: Request, res: Response): Promise<void> {
+    async putTeacher(req: Request, res: Response): Promise<void> {
         try {
             const id = req.params.id
-            const turma_id = req.body.turma_id
-            const docenteDB = new DocenteDataBase()
+            const class_id = req.body.class_id
+            const teacherDB = new TeacherDataBase()
 
-            await docenteDB.updateDocente(id, turma_id)
+            await teacherDB.updateDocente(id, class_id)
             res.status(200).send('Class updated successfully')
 
         } catch (error: any) {

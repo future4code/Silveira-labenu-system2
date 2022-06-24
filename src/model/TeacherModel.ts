@@ -1,4 +1,4 @@
-export class DocenteModel {
+export class TeacherModel {
    constructor(
       private id: string,
       private nome: string,
@@ -15,16 +15,16 @@ export class DocenteModel {
    public getId(): string{
       return this.id
    }
-   public getNome(): string{
+   public getName(): string{
       return this.nome
    }
    public getEmail(): string{
       return this.email
    }
-   public getDataNasc(): Date{
+   public getBirth(): Date{
       return this.data_nasc
    }
-   public getTurmaId(): string{
+   public getClassId(): string{
       return this.turma_id
    }
 };

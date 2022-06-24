@@ -1,4 +1,4 @@
-export class EstudanteModel{
+export class StudentModel{
       constructor(
       private id: string,
       private nome: string,
@@ -17,7 +17,7 @@ export class EstudanteModel{
       return this.id
     }
 
-    public getNome():string{
+    public getName():string{
       return this.nome
     }
 
@@ -25,11 +25,11 @@ export class EstudanteModel{
       return this.email
     }
     
-    public getDataNasc():Date{
+    public getBirth():Date{
       return this.data_nasc
     }
 
-    public getTurmaId():string{
+    public getClassId():string{
       return this.turma_id
     }
  }
