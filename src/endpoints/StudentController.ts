@@ -1,70 +1,67 @@
 import { Request, Response } from "express";
-import { EstudanteDataBase } from "../data/EstudanteDataBase";
-import { EstudanteModel } from "../model/EstudanteModel";
+import { StudentDataBase } from "../data/StudentDataBase";
+import { StudentModel } from "../model/StudentModel";
 
 export class StudentController {
-    async postStudent(req: Request, res: Response): Promise<void>{
+    async postStudent(req: Request, res: Response): Promise<void> {
         try {
-           
-            const Date = req.body.data_nasc
-            const birth: Date = Date.split('/').reverse().join('-');
-            const {nome, email, turma_id} = req.body
+            const { nome, email, turma_id, data_nasc } = req.body
+            const revertedDate = data_nasc.split('/').reverse().join('-')
             const id = Date.now().toString()
-            
-            if(!nome || nome === ""){
+
+            if (!nome || nome === "") {
                 throw new Error("The name input is empty")
             }
-            if(!email || email === ""){
+            if (!email || email === "") {
                 throw new Error("The email input is empty")
             }
-            if(!birth){
+            if (!data_nasc) {
                 throw new Error("The birth input is empty")
             }
-            if(!turma_id || turma_id === ""){
+            if (!turma_id || turma_id === "") {
                 throw new Error("The turma id input is empty")
             }
 
-            const estudante = new EstudanteModel(id, nome, email, birth, turma_id)
-            const estudanteDB = new EstudanteDataBase()
-    
-            await estudanteDB.insert(estudante)
-            res.status(201).send("Estudante adicionada com sucesso")
-    
-        } catch (error:any) {
+            const student = new StudentModel(id, nome, email, revertedDate, turma_id)
+            const studentDB = new StudentDataBase()
+
+            await studentDB.insert(student)
+            res.status(201).send("Student successfully added")
+        } catch (error: any) {
             res.status(500).send(error.message || error.sqlMessage)
         }
     }
 
-    async getStudent(req: Request, res: Response):Promise<void>{
+    async getStudent(req: Request, res: Response): Promise<void> {
         try {
-            const nome = req.params.nome
-            const estudanteDB = new EstudanteDataBase()
-    
-            const student = await estudanteDB.select(nome)
-    
+            const name = req.params.nome
+            const studentDB = new StudentDataBase()
+
+            const student = await studentDB.select(name)
+
             res.status(200).send(student)
-        } catch (error:any) {
+        } catch (error: any) {
             res.status(500).send(error.message || error.sqlMessage)
         }
- }
+    }
 
-    async putStudent(req: Request, res: Response): Promise<void>{
-        try{
+    async putStudent(req: Request, res: Response): Promise<void> {
+        try {
             const id = req.params.id
-            const turma_id = req.body.turma_id
-            const estudanteDB = new EstudanteDataBase()
+            const class_id = req.body.turma_id
+            const studentDB = new StudentDataBase()
 
-            if(!turma_id || turma_id === ""){
+            if (!class_id || class_id === "") {
                 throw new Error("The name input is empty")
             }
-            if(!id || id === ""){
+            if (!id || id === "") {
                 throw new Error("The id input is empty")
             }
 
-            await estudanteDB.update(id, turma_id)
+            await studentDB.update(id, class_id)
             res.status(200).send("modificou")
 
-        }catch(error: any){
+        } catch (error: any) {
             res.status(500).send(error.message || error.sqlMessage)
         }
     }
