@@ -15,13 +15,13 @@ export class StudentController {
                 throw new Error("The name input is empty")
             }
             if(!email || email === ""){
-                throw new Error("The name input is empty")
+                throw new Error("The email input is empty")
             }
             if(!birth){
-                throw new Error("The name input is empty")
+                throw new Error("The birth input is empty")
             }
             if(!turma_id || turma_id === ""){
-                throw new Error("The name input is empty")
+                throw new Error("The turma id input is empty")
             }
 
             const estudante = new EstudanteModel(id, nome, email, birth, turma_id)
@@ -37,11 +37,12 @@ export class StudentController {
 
     async getStudent(req: Request, res: Response):Promise<void>{
         try {
+            const nome = req.params.nome
             const estudanteDB = new EstudanteDataBase()
     
-            const estudante = await estudanteDB.select()
+            const student = await estudanteDB.select(nome)
     
-            res.status(200).send(estudante)
+            res.status(200).send(student)
         } catch (error:any) {
             res.status(500).send(error.message || error.sqlMessage)
         }
@@ -55,6 +56,9 @@ export class StudentController {
 
             if(!turma_id || turma_id === ""){
                 throw new Error("The name input is empty")
+            }
+            if(!id || id === ""){
+                throw new Error("The id input is empty")
             }
 
             await estudanteDB.update(id, turma_id)

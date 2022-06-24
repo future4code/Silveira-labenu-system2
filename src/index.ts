@@ -19,7 +19,7 @@ app.put("/docente/:id", docenteController.putDocente);
 const studentController = new StudentController()
 
 app.post("/estudante", studentController.postStudent);
-app.get("/estudante", studentController.getStudent);
+app.get("/estudante/:nome", studentController.getStudent);
 app.put("/estudante/:id", studentController.putStudent)
 
 const especialidadeController = new EspecialidadeController()

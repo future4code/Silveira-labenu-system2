@@ -16,10 +16,11 @@ export class EstudanteDataBase extends BaseDatabase{
             throw new Error("Erro inesperado, tente novamente")
        }
     }
-    public async select(){
+    public async select(nome: string){
         try {
             const result = await BaseDatabase.connection("estudante")
             .select("*")
+            .where("nome", "=", nome)
             return result
         } catch (error) {
             throw new Error("Erro Inesperado")

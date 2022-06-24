@@ -25,7 +25,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3003/estudante
+GET http://localhost:3003/estudante/Mariana
 Content-Type: application/json
 
 ###
