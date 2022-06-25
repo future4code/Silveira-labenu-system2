@@ -1,26 +1,34 @@
-POST http://localhost:3003/turma
+POST http://localhost:3003/classRom
 Content-Type: application/json
 
 {
-    "nome":"Newton",
-    "modulo": 2 
+    "nome":"Jackson",
+    "modulo": 5 
 }
 
 ###
 
-GET http://localhost:3003/turma
+GET http://localhost:3003/classRom
 Content-Type: application/json
 
 ###
-
-POST http://localhost:3003/estudante
+PUT http://localhost:3003/classRom/1656036223892
 Content-Type: application/json
 
 {
-    "nome": "",
-    "email": "",
-    "data_nasc": "",
-    "turma_id": ""
+    "modulo": 1
+}
+
+###
+
+POST http://localhost:3003/student
+Content-Type: application/json
+
+{
+    "nome": "Luian",
+    "email": "luiandapisadinha@gmail.com",
+    "data_nasc": "1999/02/12",
+    "turma_id": "1655927633690"
 }
 
 ###
@@ -67,7 +75,7 @@ POST http://localhost:3003/especialidade
 Content-Type: application/json
 
 {
-    "nome":""
+    "nome":"React"
 }
 
 ###
@@ -76,7 +84,7 @@ POST http://localhost:3003/hobby
 Content-Type: application/json
 
 {
-    "nome":"Ler"
+    "nome":"Jogar"
 }
 
 ###

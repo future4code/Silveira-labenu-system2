@@ -1,17 +1,18 @@
 
 import {app} from "./app"
-import { TurmaController } from "./endpoints/TurmaController";
+import { ClassRomController} from "./endpoints/ClassRomController";
 import { DocenteController } from './endpoints/DocenteController';
 import { StudentController } from "./endpoints/StudentController";
-import { EspecialidadeController } from "./endpoints/EspecialidadeController";
 import { HobbyController } from "./endpoints/HobbyController";
-import { DocEspController } from "./endpoints/DocEspController";
-import { EstHobbyController } from "./endpoints/EstHobbyController";
+import { SpecialtyController } from "./endpoints/SpecialtyController";
+import { TSController } from "./endpoints/TSController";
+import { SHController } from "./endpoints/SHController";
 
-const turmaController = new TurmaController()
+const classRomController = new ClassRomController()
 
-app.post("/turma", turmaController.postTurma);
-app.get("/turma", turmaController.getTurma);
+app.post("/classRom", classRomController.postClassRom);
+app.get("/classRom", classRomController.getClassRom);
+app.put("/classRom/:id", classRomController.putClassRom);
 
 const docenteController = new DocenteController();
 
@@ -21,23 +22,23 @@ app.put("/docente/:id", docenteController.putDocente);
 
 const studentController = new StudentController()
 
-app.post("/estudante", studentController.postStudent);
-app.get("/estudante", studentController.getStudent);
-app.put("/estudante/:id", studentController.putStudent)
+app.post("/student", studentController.postStudent);
+app.get("/student", studentController.getStudent);
+app.put("/student/:id", studentController.putStudent)
 
-const especialidadeController = new EspecialidadeController()
+const specialtyController = new SpecialtyController()
 
-app.post("/especialidade", especialidadeController.postEspecialidade)
+app.post("/specialty", specialtyController.postSpecialty)
 
 const hobbyController = new HobbyController()
 
 app.post("/hobby", hobbyController.postHobby)
 
-const espDocController = new DocEspController()
+const tSController = new TSController()
 
-app.post("/especialidade-docente", espDocController.postDocEsp)
+app.post("/specialty-teacher", tSController.postTS)
 
-const estHobbyController = new EstHobbyController()
+const sHController = new SHController()
 
-app.post("/hobby-estudante", estHobbyController.postEstHobby)
+app.post("/hobby-student", sHController.postSH)
 

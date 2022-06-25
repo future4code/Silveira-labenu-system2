@@ -9,13 +9,13 @@ export class HobbyController{
             const id = Date.now().toString()
 
             if(!nome){
-                throw new Error ("O nome precisa ser passado")
+                throw new Error ("The name needs to be passed")
             }
             const hobby = new HobbyModel(id, nome)
             const hobbyDB = new HobbyDataBase()
 
             await hobbyDB.insert(hobby)
-            res.status(201).send(`${nome} foi adicionado a hobbies`)
+            res.status(201).send(`${nome} has been added to hobbies`)
         } catch (error:any) {
             res.status(500).send(error.message||error.sqlMessage)
         }

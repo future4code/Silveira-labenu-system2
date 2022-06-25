@@ -1,4 +1,4 @@
-export class EstHobbyModel{
+export class SHModel{
     constructor(
         private id: string,
         private estudante_id: string,
