@@ -9,8 +9,8 @@ export class HobbyDataBase extends BaseDatabase{
                 id:hobby.getId(),
                 nome:hobby.getNome()
             })
-        } catch (error) {
-            throw new Error("Erro inesperado, tent novamente")
+        } catch (error:any) {
+            throw new Error("unexpected error")
         }
     }
 }

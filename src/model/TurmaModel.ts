@@ -1,4 +1,4 @@
-export class TurmaModel{
+export class ClassRomModel{
       constructor(
       private id: string,
       private nome: string,

@@ -1,4 +1,4 @@
-export class DocEspModel{
+export class TSModel{
     constructor(
         private id: string,
         private docente_id: string,

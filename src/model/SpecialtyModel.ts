@@ -1,4 +1,4 @@
-export class EspecialidadeModel{
+export class SpecialtyModel{
     constructor(
         private id: string,
         private nome: string
