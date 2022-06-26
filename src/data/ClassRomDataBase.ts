@@ -1,7 +1,7 @@
-import { DocenteModel } from "../model/DocenteModel";
+// import { DocenteModel } from "../model/DocenteModel";
 import { ClassRomModel } from "../model/TurmaModel";
 import { BaseDatabase } from "./BaseDatabase";
-import { DocenteDataBase } from "./DocenteDataBase";
+// import { DocenteDataBase } from "./DocenteDataBase";
 
 export class ClassRomDataBase extends BaseDatabase{
     public async insert(classRom:ClassRomModel){

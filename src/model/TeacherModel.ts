@@ -15,16 +15,16 @@ export class TeacherModel {
    public getId(): string{
       return this.id
    }
-   public getName(): string{
+   public getNome(): string{
       return this.nome
    }
    public getEmail(): string{
       return this.email
    }
-   public getBirth(): Date{
+   public getData_nasc(): Date{
       return this.data_nasc
    }
-   public getClassId(): string{
+   public getTurma_id(): string{
       return this.turma_id
    }
 };
