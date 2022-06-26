@@ -12,14 +12,14 @@ app.post("/classRom", classRomController.postClassRom);
 app.get("/classRom", classRomController.getClassRom);
 app.put("/classRom/:id", classRomController.putClassRom);
 
-const docenteController = new TeacherController();
-app.post("/teacher", docenteController.postTeacher);
-app.get("/teacher", docenteController.getTeacher);
-app.put("/teacher/:id", docenteController.putTeacher);
+const teacherController = new TeacherController();
+app.post("/teacher", teacherController.postTeacher);
+app.get("/teacher", teacherController.getTeacher);
+app.put("/teacher/:id", teacherController.putTeacher);
 
 const studentController = new StudentController()
 app.post("/student", studentController.postStudent);
-app.get("/student", studentController.getStudent);
+app.get("/student/:nome", studentController.getStudent);
 app.put("/student/:id", studentController.putStudent)
 
 const specialtyController = new SpecialtyController()

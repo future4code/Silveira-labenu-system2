@@ -34,10 +34,10 @@ export class StudentController {
 
     async getStudent(req: Request, res: Response): Promise<void> {
         try {
-            const name = req.params.nome
+            const nome = req.params.nome
             const studentDB = new StudentDataBase()
 
-            const student = await studentDB.select(name)
+            const student = await studentDB.select(nome)
 
             res.status(200).send(student)
         } catch (error: any) {
@@ -59,7 +59,7 @@ export class StudentController {
             }
 
             await studentDB.update(id, class_id)
-            res.status(200).send("modificou")
+            res.status(200).send("the student's class has been successfully changed")
 
         } catch (error: any) {
             res.status(500).send(error.message || error.sqlMessage)
